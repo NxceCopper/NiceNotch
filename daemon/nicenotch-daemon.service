@@ -1,0 +1,12 @@
+[Unit]
+Description=NiceNotch Daemon
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/nice/NiceNotch-v2/daemon/daemon.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

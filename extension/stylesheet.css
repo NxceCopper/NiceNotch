@@ -1,0 +1,133 @@
+/* NiceNotch — stylesheet.css
+   No shadows (you said delete them).
+   Color states on notch-root.
+   Expanding panel slides down from the pill.
+   ─────────────────────────────────────────── */
+
+/* ── Root (vertical stack, clips overflow while collapsed) ────────────── */
+
+.notch-root {
+    background-color: #000000;
+    border-radius:    0 0 20px 20px;
+    /* no box-shadow */
+}
+
+/* ── Pill (always visible header row) ─────────────────────────────────── */
+
+.notch-pill {
+    padding:  0 14px;
+    spacing:  0;
+    /* bottom corners stay rounded even when panel is open */
+    border-radius: 0 0 0 0;    /* overridden by notch-pill-open */
+    transition-duration: 280ms;
+}
+
+/* When collapsed, bottom corners are rounded */
+.notch-pill-closed {
+    border-radius: 0 0 20px 20px;
+}
+
+/* When open, bottom edge is flat so panel attaches cleanly */
+.notch-pill-open {
+    border-radius: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── Camera dot ────────────────────────────────────────────────────────── */
+
+.notch-cam-dot {
+    background-color: #1c1c2a;
+    border-radius:    4px;
+    border:           1px solid rgba(120,120,200,0.25);
+}
+
+/* ── Status label (in pill, shows transfer/playback info) ──────────────── */
+
+.notch-status {
+    color:       rgba(255,255,255,0.80);
+    font-size:   11px;
+    font-weight: 600;
+}
+
+/* ── Expandable panel ──────────────────────────────────────────────────── */
+
+.notch-panel {
+    background-color: #000000;
+    border-radius:    0 0 20px 20px;
+    padding:          10px 14px 14px 14px;
+    spacing:          6px;
+    /* overflow hidden handled by clip_to_allocation on root */
+}
+
+/* ── Section labels ────────────────────────────────────────────────────── */
+
+.notch-section-label {
+    color:       rgba(255,255,255,0.28);
+    font-size:   9px;
+    font-weight: 700;
+    padding:     2px 4px 4px 4px;
+}
+
+/* ── Divider ───────────────────────────────────────────────────────────── */
+
+.notch-divider {
+    background-color: rgba(255,255,255,0.07);
+    margin: 4px 0;
+}
+
+/* ── Device list ───────────────────────────────────────────────────────── */
+
+.notch-device-list {
+    spacing: 2px;
+}
+
+.notch-no-devices {
+    color:       rgba(255,255,255,0.28);
+    font-size:   11px;
+    padding:     4px 6px;
+}
+
+.notch-device-btn {
+    background-color: transparent;
+    border-radius:    9px;
+    border:           none;
+    padding:          0;
+}
+.notch-device-btn:hover  { background-color: rgba(255,255,255,0.07);  }
+.notch-device-btn:active { background-color: rgba(255,255,255,0.13); }
+
+.notch-device-icon {
+    font-size:  14px;
+    padding:    8px 8px 8px 10px;
+}
+
+.notch-device-name {
+    color:       #ffffff;
+    font-size:   13px;
+    font-weight: 500;
+    padding:     8px 10px 8px 0;
+}
+
+/* ── Quick action buttons ──────────────────────────────────────────────── */
+
+.notch-action-btn {
+    background-color: rgba(255,255,255,0.05);
+    border-radius:    9px;
+    border:           none;
+    padding:          0;
+    margin:           1px 0;
+}
+.notch-action-btn:hover  { background-color: rgba(255,255,255,0.10); }
+.notch-action-btn:active { background-color: rgba(255,255,255,0.17); }
+
+.notch-action-icon {
+    font-size: 14px;
+    padding:   8px 8px 8px 12px;
+}
+
+.notch-action-label {
+    color:       rgba(255,255,255,0.85);
+    font-size:   12px;
+    font-weight: 500;
+    padding:     8px 12px 8px 4px;
+}
